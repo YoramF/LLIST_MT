@@ -178,7 +178,7 @@ void insertElement (const LIST list, const void *element, int (*cfunc)(void *, v
 			 {
 				lnodeNew->next = lnodePtr;
 
-				if (lnodePrev != list->first)
+				if (lnodePrev != lnodePtr)
 					// new node become the first node in the list
 					lnodePrev->next = lnodeNew;
 				else
@@ -237,7 +237,7 @@ lnode *insertElementO (const LIST list, const void *element, int (*cfunc)(void *
 	 // otherwhise - do nothing
 	 if (cmp != 0)
 	 {
-		 // At this point we nweed to add new lnode to the list
+		 // At this point we need to add new lnode to the list
 		 if ((lnodeNew = addNode(list, element)) == NULL)
 			 return NULL;
 
@@ -260,7 +260,7 @@ lnode *insertElementO (const LIST list, const void *element, int (*cfunc)(void *
 			 {
 				lnodeNew->next = lnodePtr;
 
-				if (lnodePrev != list->first)
+				if (lnodePrev != lnodePtr)
 					// new node become the first node in the list
 					lnodePrev->next = lnodeNew;
 				else
